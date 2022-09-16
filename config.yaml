@@ -1,0 +1,4 @@
+paths:
+  data: 'data.csv'
+
+latent_columns:   # Define the columns that represent the latent space
