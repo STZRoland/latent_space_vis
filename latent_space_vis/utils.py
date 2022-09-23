@@ -11,3 +11,7 @@ def get_float_columns(df: pd.DataFrame) -> list[str]:
             columns.append(c)
 
     return columns
+
+
+def melt_df(df: pd.DataFrame) -> pd.DataFrame:
+    return df.reset_index().melt('index', var_name='dim', value_name='value')
