@@ -76,7 +76,7 @@ def altair_jointplot(df: pd.DataFrame, x: str, y: str, hue: str = None, title: s
 
 
 def altair_pairplot(df: pd.DataFrame, vars: list[str], hue: str = None) -> alt.Chart:
-    base = alt.Chart().mark_point().encode(
+    base = alt.Chart().mark_circle().encode(
         color=alt.Color(hue if hue is not None else alt.Undefined, type='nominal')
     )
 
@@ -88,8 +88,10 @@ def altair_pairplot(df: pd.DataFrame, vars: list[str], hue: str = None) -> alt.C
             if x == y:
                 row |= altair_kde_plot(df, x_encoding, hue)
             else:
-                x_alt = alt.X(x_encoding) if y == len(vars) - 1 else alt.X(x_encoding, axis=None)
-                y_alt = alt.Y(y_encoding) if x == 0 else alt.Y(y_encoding, axis=None)
+                x_alt = alt.X(x_encoding, axis=alt.Axis(grid=False)) if y == len(vars) - 1 \
+                    else alt.X(x_encoding, axis=None)
+                y_alt = alt.Y(y_encoding, axis=alt.Axis(grid=False)) if x == 0 \
+                    else alt.Y(y_encoding, axis=None)
 
                 row |= base.encode(x=x_alt, y=y_alt)
 

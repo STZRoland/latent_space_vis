@@ -13,7 +13,8 @@ def dim_reduction_module(df: pd.DataFrame, label_df: pd.DataFrame = None, contai
         container = st.container()
 
     col1, col2 = container.columns(2)
-    method = col1.selectbox('Select the method.', options=_options, index=0)
+    method = col1.selectbox('Select the method (adjust hyperparameters in code).',
+                            options=_options, index=0)
     if label_df is not None:
         hue = col2.selectbox('Hue', options=label_df.columns, index=0, key='hue_2')
     else:

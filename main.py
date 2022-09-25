@@ -18,9 +18,6 @@ def main():
         label_df[c].apply(str)
     df = pd.concat((label_df, data_df), axis=1)
 
-    st.header('Latent space visualization')
-    st.table(df.head())
-
     with st.sidebar:
         plot_indices_container = st.container()
         subset_selection_container = st.expander('Subset Selection')
@@ -31,6 +28,9 @@ def main():
     sub_data_df = data_df.iloc[indices]
     sub_label_df = label_df.iloc[indices]
     sub_df = pd.concat((sub_label_df, sub_data_df), axis=1)
+
+    st.header('Latent space visualization')
+    st.table(sub_df.head())
 
     jointplot_module(sub_df, sub_data_df.columns, label_df)
 
