@@ -1,9 +1,7 @@
+import altair as alt
 import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
-import altair as alt
-
-from latent_space_vis.utils import melt_df
 
 sns.set_style('darkgrid')
 
@@ -106,7 +104,7 @@ def altair_kde_plot(df: pd.DataFrame, col: str, hue: str = None, height: int = N
         as_=[col, 'density'],
         groupby=[hue] if hue is not None else alt.Undefined
     ).mark_area(line=True).encode(
-        x=alt.X(col + ':Q', axis=None),
+        x=alt.X(col + ':Q'),
         y=alt.Y('density:Q', axis=None),
         color=alt.Color(hue, type='nominal'),
         opacity=alt.value(0.5),

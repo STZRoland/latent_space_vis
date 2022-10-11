@@ -1,3 +1,6 @@
 paths:
-  data: 'data/mu_df.csv'
-  labels: 'data/labels.csv'
+  data: '/Users/rolando/Development/athlete-identification-and-personel-pro-file-creation-based-on-movement-sensor-data/scripts/autoencoder/vae/logs/diodora_search_1/2022-10-11 10-20-37/embedding/mu.csv'
+  labels: '/Users/rolando/Development/athlete-identification-and-personel-pro-file-creation-based-on-movement-sensor-data/data/processed/diodora/single_stride/lumbar_left_right/labels.csv'
+  var: '/Users/rolando/Development/athlete-identification-and-personel-pro-file-creation-based-on-movement-sensor-data/scripts/autoencoder/vae/logs/diodora_search_1/2022-10-11 10-20-37/embedding/var.csv'
+
+#  labels: '/Users/rolando/Development/athlete-identification-and-personel-pro-file-creation-based-on-movement-sensor-data/data/processed/baseball/UW/AllSensors/labels.csv'
