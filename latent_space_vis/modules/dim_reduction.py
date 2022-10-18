@@ -64,7 +64,7 @@ def t_sne(data: pd.DataFrame) -> np.ndarray:
 _dim_reduction_dict = {
     'PCA': pca,
     'Isomap': isomap,
-    't-SNE': t_sne,
-    'MDS (takes long)': mds
+    't-SNE (not distance preserving)': t_sne,
+    'MDS (distance preserving)': mds
 }
 _options = list(_dim_reduction_dict.keys())
