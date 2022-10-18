@@ -1,5 +1,6 @@
 import altair as alt
 import matplotlib.pyplot as plt
+import numpy as np
 import pandas as pd
 import seaborn as sns
 
@@ -34,6 +35,7 @@ def altair_jointplot(df: pd.DataFrame, x: str, y: str, hue: str = None, title: s
         x=alt.X(x, scale=scale_alt),
         y=alt.Y(y, scale=scale_alt),
         color=colors,
+        # shape=alt.Shape('trial', type='nominal', scale=alt.Scale(range=shapes)),  # Have to use mark_point()!!!!
     ).properties(
         title=title,
         height=height,
